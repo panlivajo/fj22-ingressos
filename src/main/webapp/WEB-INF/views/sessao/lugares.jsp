@@ -38,9 +38,16 @@
 								<tr>
 								<c:forEach var="lugar" items="${map.value}">
 									<td class="fileira-assento"><figure>
+<<<<<<< HEAD
 										<svg  id="${lugar.id}"  version="1.0" id="SEAT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 											class="assento ${sessao.isDisponivel(lugar)&& !carrinho.isSelecionado(lugar) ?'changeCheckBox(this)' : ''}"
 											 onclick="${sessao.isDisponivel(lugar) && !carrinho.isSelecionado(lugar) ? 'changeCheckbox(this)' : '' }"
+=======
+										<svg 
+										class="assento ${sessao.isDisponivel(lugar) ? 'disponivel' : 'ocupado'}"
+										onclick="${sessao.isDisponivel(lugar) ? 'changeCheckbox(this)' : ''}"
+										  version="1.0" id="SEAT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+>>>>>>> 927f7a9a07c9c3474cdfc4a8cddd4169b85185bf
 												 viewBox="0 0 318.224 305.246" enable-background="new 0 0 318.224 305.246" xml:space="preserve">
 											<g id="FILL">
 												<path d="M269.395,132.246h-15.02V51.414c0-11.758-9.492-21.248-21.248-21.248H85.097
@@ -207,6 +214,8 @@
             }
 
         </script>
+      
+        
 
     </jsp:body>
 

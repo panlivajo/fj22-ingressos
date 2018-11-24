@@ -19,11 +19,19 @@ public class DescontoTest {
 
 	@Test
 	public void naoDeveConcederDescontoParaIngressoNormal() {
+<<<<<<< HEAD
 		Lugar lugar = new Lugar ("A",1);
 		Sala sala = new Sala("Eldorado - Imax",new BigDecimal(22.50));
 		Filme filme = new Filme("RogueOne", Duration.ofMinutes(120),"SCI-FI", new BigDecimal(12.0));
 		Sessao sessao = new Sessao(LocalTime.parse("10:00:00"), filme , sala);
 		Ingresso ingresso = new Ingresso(sessao, TipoDeIngresso.INTEIRO,lugar);
+=======
+		Lugar lugar = new Lugar("A",1);
+		Sala sala = new Sala("Eldorado - Imax",new BigDecimal(22.50));
+		Filme filme = new Filme("RogueOne", Duration.ofMinutes(120),"SCI-FI", new BigDecimal(12.0));
+		Sessao sessao = new Sessao(LocalTime.parse("10:00:00"), filme , sala);
+		Ingresso ingresso = new Ingresso(sessao, TipoDeIngresso.INTEIRO, lugar);
+>>>>>>> 927f7a9a07c9c3474cdfc4a8cddd4169b85185bf
 		
 		BigDecimal precoEsperado = new BigDecimal("34.5");
 		

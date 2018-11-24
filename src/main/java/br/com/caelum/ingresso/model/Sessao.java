@@ -14,8 +14,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 927f7a9a07c9c3474cdfc4a8cddd4169b85185bf
 
 @Entity
 public class Sessao {
@@ -34,9 +37,14 @@ public class Sessao {
 	 
 	private BigDecimal preco;
 	
+<<<<<<< HEAD
 	@OneToMany(mappedBy = "sessao", fetch = FetchType.EAGER)
 	private Set<Ingresso> ingressos = new HashSet<>();
 	
+=======
+	@OneToMany(mappedBy = "sessao", fetch=FetchType.EAGER)
+	private Set<Ingresso> ingressos = new HashSet<>();
+>>>>>>> 927f7a9a07c9c3474cdfc4a8cddd4169b85185bf
 	
 	/**
 	 * Deprecated hibernate only
@@ -108,5 +116,9 @@ public class Sessao {
 	public Map<String,List<Lugar>> getMapaDeLugares(){
 		return sala.getMapaDeLugares();
 	}
+	
+	public boolean isDisponivel(Lugar lugarSelecionado){
+		return ingressos.stream().map(Ingresso::getLugar).noneMatch(lugar -> lugar.equals(lugarSelecionado));
+	}	
 	
 }
